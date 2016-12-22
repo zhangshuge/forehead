@@ -74,6 +74,11 @@ public abstract class AbstractLoadingCache<K, V> {
     }
 
     /**
+     * 用于初始化缓存，具体操作有各子类实现
+     */
+    public abstract void putAll();
+
+    /**
      * 定义抽象方法由具体子类实现重写，用于CacheBuilder的回调方法load()函数加载缓存
      *
      * @param k

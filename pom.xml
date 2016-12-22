@@ -9,6 +9,7 @@
         <module>forehead-demo</module>
         <module>forehead-common</module>
         <module>forehead-service</module>
+        <module>forehead-model</module>
     </modules>
     <groupId>com.zc</groupId>
     <artifactId>forehead</artifactId>

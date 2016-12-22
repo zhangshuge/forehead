@@ -14,9 +14,4 @@ public interface LocalCache<K, V> {
      * @return
      */
     public V get(K key);
-
-    /**
-     * 初始化缓存时显式插入缓存
-     */
-    public void putAll();
 }

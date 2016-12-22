@@ -1,6 +1,7 @@
 package com.zc;
 
 import com.zc.common.cache.LocalCache;
+import com.zc.service.cache.IdcCacheService;
 import com.zc.service.cache.SerialRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -15,8 +16,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class CacheController {
     @Autowired
-    @Qualifier(value = "serialRuleServiceImpl")
+    @Qualifier(value = "SerialRuleServiceImpl")
     private SerialRuleService<String, Object> localCache;
+
+    @Autowired
+    private IdcCacheService idcCacheService;
 
     @RequestMapping(value = "/queryCaches.action")
     public ModelAndView queryCaches(Model model) {
@@ -29,7 +33,10 @@ public class CacheController {
         view.addObject("value1", value1);
         view.addObject("value2", value2);
 
-        localCache.getCacheStats("serialRuleServiceImpl");
+
+        idcCacheService.get("000010");
+
+        localCache.getCacheStats("SerialRuleServiceImpl");
         return view;
     }
 }

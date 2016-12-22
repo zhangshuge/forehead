@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class DemoController {
     @Autowired
-    @Qualifier(value = "serialRuleServiceImpl")
+    @Qualifier(value = "SerialRuleServiceImpl")
     private LocalCache<String, String> cache;
 
     @RequestMapping("/demotest.action")

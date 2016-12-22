@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Created by zhangchi9 on 2016/12/20.
  */
-@Service("serialRuleServiceImpl")
+@Service("SerialRuleServiceImpl")
 public class SerialRuleServiceImpl extends AbstractLoadingCache<String, String> implements SerialRuleService<String, Object> {
     public SerialRuleServiceImpl() {
         super.setSpec("maximumSize=10000,expireAfterWrite=5m");
@@ -50,6 +50,7 @@ public class SerialRuleServiceImpl extends AbstractLoadingCache<String, String> 
         map.put("key2", "value2");
         super.putAllValue(map);
     }
+
 
     @Override
     public void resetCacheAll(String cacheName) {
