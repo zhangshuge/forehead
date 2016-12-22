@@ -9,6 +9,7 @@ import java.util.Map;
 public interface LocalCache<K, V> {
     /**
      * 根据key获取value
+     *
      * @param key
      * @return
      */

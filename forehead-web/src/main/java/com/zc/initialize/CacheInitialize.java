@@ -26,8 +26,7 @@ public class CacheInitialize implements ApplicationListener<ContextRefreshedEven
             SerialRuleServiceImpl serialRuleServiceImpl = SpringContextUtil.getBean("serialRuleServiceImpl");
             serialRuleServiceImpl.putAll();
             AbstractLoadingCache a = CacheStatsManager.getAbstractLoadingCache("serialRuleServiceImpl");
-            ConcurrentMap<Object, Object> cmap =  a.getCache().asMap();
-            System.out.println("-----------------");
+            ConcurrentMap<Object, Object> cmap = a.getCache().asMap();
         }
     }
 }

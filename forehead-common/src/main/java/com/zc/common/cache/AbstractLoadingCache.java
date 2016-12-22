@@ -23,6 +23,7 @@ public abstract class AbstractLoadingCache<K, V> {
 
     /**
      * 初始化缓存对象
+     *
      * @return
      */
     public LoadingCache<K, V> getCache() {
@@ -32,11 +33,11 @@ public abstract class AbstractLoadingCache<K, V> {
                     loadingCache = CacheBuilder.from(spec)
                             .recordStats()//开启缓存统计
                             .build(new CacheLoader<K, V>() {
-                        @Override
-                        public V load(K k) throws Exception {
-                            return fetchData(k);
-                        }
-                    });
+                                @Override
+                                public V load(K k) throws Exception {
+                                    return fetchData(k);
+                                }
+                            });
                     this.resetTime = new Date();
                     this.highestTime = new Date();
                 }
@@ -48,6 +49,7 @@ public abstract class AbstractLoadingCache<K, V> {
     /**
      * 封装LoadingCache.get(key)方法调用
      * 根据key 获取value值，可以扩展当value结果为null时的处理逻辑
+     *
      * @param key
      * @return
      * @throws ExecutionException
@@ -55,13 +57,13 @@ public abstract class AbstractLoadingCache<K, V> {
     protected V getValue(K key) throws ExecutionException {
         V result = getCache().get(key);
 
-        if (getCache().size() <0 ){
+        if (getCache().size() < 0) {
             //扩展当缓存为空时的处理逻辑
         }
-        if (result instanceof Objects){
+        if (result instanceof Objects) {
             //扩展返回结果对象的处理逻辑
         }
-        if (getCache().size() > highestSize){
+        if (getCache().size() > highestSize) {
             this.highestSize = getCache().size();
         }
         return result;
@@ -73,6 +75,7 @@ public abstract class AbstractLoadingCache<K, V> {
 
     /**
      * 定义抽象方法由具体子类实现重写，用于CacheBuilder的回调方法load()函数加载缓存
+     *
      * @param k
      * @return
      */

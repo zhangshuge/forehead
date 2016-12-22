@@ -14,15 +14,16 @@ import org.springframework.web.servlet.ModelAndView;
 public class DemoController {
     @Autowired
     @Qualifier(value = "serialRuleServiceImpl")
-    private LocalCache<String,String> cache;
+    private LocalCache<String, String> cache;
+
     @RequestMapping("/demotest.action")
-    public ModelAndView demotest(){
+    public ModelAndView demotest() {
         String value = null;
         value = cache.get("test");
         String c = cache.get("key1");
         String d = cache.get("key2");
         ModelAndView view = new ModelAndView("/demo");
-        view.addObject("value",value);
+        view.addObject("value", value);
         return view;
     }
 }

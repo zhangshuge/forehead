@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
  * Created by zhangchi9 on 2016/12/20.
  */
 @Service("serialRuleServiceImpl")
-public class SerialRuleServiceImpl extends AbstractLoadingCache<String, String> implements SerialRuleService<String,Object> {
+public class SerialRuleServiceImpl extends AbstractLoadingCache<String, String> implements SerialRuleService<String, Object> {
     public SerialRuleServiceImpl() {
         super.setSpec("maximumSize=10000,expireAfterWrite=5m");
     }
@@ -38,7 +38,7 @@ public class SerialRuleServiceImpl extends AbstractLoadingCache<String, String> 
      */
     @Override
     protected String fetchData(String s) {
-        super.setHighestTime( new Date());//新增数据是记录创建时间
+        super.setHighestTime(new Date());//新增数据是记录创建时间
         return "data is not null !";
     }
 
@@ -53,7 +53,7 @@ public class SerialRuleServiceImpl extends AbstractLoadingCache<String, String> 
 
     @Override
     public void resetCacheAll(String cacheName) {
-        AbstractLoadingCache<Object,Object> cache = CacheStatsManager.getAbstractLoadingCache(cacheName);
+        AbstractLoadingCache<Object, Object> cache = CacheStatsManager.getAbstractLoadingCache(cacheName);
         cache.getCache().invalidateAll();
         cache.setResetTime(new Date());
     }

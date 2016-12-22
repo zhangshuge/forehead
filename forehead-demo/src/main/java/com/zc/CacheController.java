@@ -16,18 +16,18 @@ import org.springframework.web.servlet.ModelAndView;
 public class CacheController {
     @Autowired
     @Qualifier(value = "serialRuleServiceImpl")
-    private SerialRuleService<String,Object> localCache;
+    private SerialRuleService<String, Object> localCache;
 
     @RequestMapping(value = "/queryCaches.action")
-    public ModelAndView queryCaches(Model model){
+    public ModelAndView queryCaches(Model model) {
         String value = null;
         value = localCache.get("test");
         String value1 = localCache.get("key1");
         String value2 = localCache.get("key2");
         ModelAndView view = new ModelAndView("/cache");
-        view.addObject("value",value);
-        view.addObject("value1",value1);
-        view.addObject("value2",value2);
+        view.addObject("value", value);
+        view.addObject("value1", value1);
+        view.addObject("value2", value2);
 
         localCache.getCacheStats("serialRuleServiceImpl");
         return view;
