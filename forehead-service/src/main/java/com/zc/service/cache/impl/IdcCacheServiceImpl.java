@@ -32,7 +32,7 @@ public class IdcCacheServiceImpl extends AbstractLoadingCache<String, IdcEntity>
     }
 
     @Override
-    public void putAll() {
+    public void putAll() throws Exception{
         IdcEntity idcEntity = new IdcEntity();
         idcEntity.setIdc("00");
         int[] db = new int[]{00, 01, 02};

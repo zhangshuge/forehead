@@ -17,12 +17,18 @@ import java.util.Set;
 public class CacheInitialize implements ApplicationListener<ContextRefreshedEvent> {
 
     @Override
-    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent){
         if (contextRefreshedEvent.getApplicationContext().getParent() == null) {
             Set<String> cacheSets = CacheStatsManager.getCacheNames();
             for (String impl : cacheSets) {
                 AbstractLoadingCache abstractLoadingCache = CacheStatsManager.getAbstractLoadingCache(impl);
-                abstractLoadingCache.putAll();
+                try {
+                    abstractLoadingCache.putAll();
+                } catch (Exception e) {
+                    System.exit(0);
+                    //throw new RuntimeException();
+                    e.printStackTrace();
+                }
             }
         }
     }

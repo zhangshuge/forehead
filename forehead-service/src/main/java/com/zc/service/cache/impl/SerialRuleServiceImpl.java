@@ -43,7 +43,7 @@ public class SerialRuleServiceImpl extends AbstractLoadingCache<String, String> 
     }
 
     @Override
-    public void putAll() {
+    public void putAll() throws Exception{
         //配置中心获取缓存配置
         Map<String, String> map = new HashMap<String, String>();
         map.put("key1", "value1");
