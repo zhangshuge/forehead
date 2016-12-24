@@ -8,31 +8,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <packaging>pom</packaging>
+    <modules>
+        <module>forehead-demo-zookeeper</module>
+    </modules>
     <artifactId>forehead-demo</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.zc</groupId>
-            <artifactId>forehead-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zc</groupId>
-            <artifactId>forehead-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
-    </dependencies>
 </project>

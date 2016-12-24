@@ -10,6 +10,7 @@
         <module>forehead-common</module>
         <module>forehead-service</module>
         <module>forehead-model</module>
+        <module>forehead-controller</module>
     </modules>
     <groupId>com.zc</groupId>
     <artifactId>forehead</artifactId>
@@ -17,6 +18,8 @@
 
     <properties>
         <spring.version>4.3.4.RELEASE</spring.version>
+        <zookeeper_version>3.3.3</zookeeper_version>
+        <guava_version>19.0</guava_version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -119,7 +122,12 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>19.0</version>
+                <version>${guava_version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper_version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
