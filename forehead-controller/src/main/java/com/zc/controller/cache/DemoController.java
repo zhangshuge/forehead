@@ -1,4 +1,4 @@
-package com.zc;
+package com.zc.controller.cache;
 
 import com.zc.common.cache.LocalCache;
 import org.springframework.beans.factory.annotation.Autowired;

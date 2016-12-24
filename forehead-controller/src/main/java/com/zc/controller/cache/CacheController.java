@@ -1,6 +1,5 @@
-package com.zc;
+package com.zc.controller.cache;
 
-import com.zc.common.cache.LocalCache;
 import com.zc.service.cache.IdcCacheService;
 import com.zc.service.cache.SerialRuleService;
 import org.springframework.beans.factory.annotation.Autowired;
